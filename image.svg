@@ -1,0 +1,60 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="768" fill="#000033" />
+  
+  <!-- Stars and particles -->
+  <circle cx="100" cy="100" r="2" fill="white" opacity="0.8" />
+  <circle cx="150" cy="200" r="1" fill="white" opacity="0.6" />
+  <circle cx="200" cy="50" r="3" fill="white" opacity="0.7" />
+  <circle cx="300" cy="300" r="2" fill="white" opacity="0.9" />
+  <circle cx="400" cy="150" r="1.5" fill="white" opacity="0.5" />
+  <circle cx="500" cy="250" r="2.5" fill="white" opacity="0.8" />
+  <circle cx="600" cy="100" r="1" fill="white" opacity="0.6" />
+  <circle cx="700" cy="350" r="2" fill="white" opacity="0.7" />
+  <circle cx="800" cy="200" r="3" fill="white" opacity="0.9" />
+  <circle cx="900" cy="50" r="1.5" fill="white" opacity="0.5" />
+  <circle cx="950" cy="300" r="2" fill="white" opacity="0.8" />
+  <circle cx="50" cy="400" r="1" fill="white" opacity="0.6" />
+  <circle cx="150" cy="500" r="2" fill="white" opacity="0.7" />
+  <circle cx="250" cy="450" r="3" fill="white" opacity="0.9" />
+  <circle cx="350" cy="550" r="1.5" fill="white" opacity="0.5" />
+  <circle cx="450" cy="600" r="2" fill="white" opacity="0.8" />
+  <circle cx="550" cy="650" r="1" fill="white" opacity="0.6" />
+  <circle cx="650" cy="700" r="2" fill="white" opacity="0.7" />
+  <circle cx="750" cy="550" r="3" fill="white" opacity="0.9" />
+  <circle cx="850" cy="600" r="1.5" fill="white" opacity="0.5" />
+  <circle cx="950" cy="650" r="2" fill="white" opacity="0.8" />
+  
+  <!-- Lightning effects -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <path d="M100 100 L120 150 L100 200 L130 250 L100 300" stroke="#9932CC" stroke-width="4" fill="none" opacity="0.7" filter="url(#glow)" />
+  <path d="M900 100 L880 150 L900 200 L870 250 L900 300" stroke="#9932CC" stroke-width="4" fill="none" opacity="0.7" filter="url(#glow)" />
+  <path d="M200 500 L220 550 L200 600 L230 650 L200 700" stroke="#9932CC" stroke-width="3" fill="none" opacity="0.6" filter="url(#glow)" />
+  <path d="M800 500 L780 550 L800 600 L770 650 L800 700" stroke="#9932CC" stroke-width="3" fill="none" opacity="0.6" filter="url(#glow)" />
+  
+  <!-- Hexagonal border with neon effect -->
+  <polygon points="312,184 512,84 712,184 812,384 712,584 512,684 312,584 212,384" fill="none" stroke="#00BFFF" stroke-width="8" filter="url(#glow)" />
+  <polygon points="312,184 512,84 712,184 812,384 712,584 512,684 312,584 212,384" fill="none" stroke="#FF0000" stroke-width="4" opacity="0.8" filter="url(#glow)" />
+  
+  <!-- Upper text: MESSAGE FROM THE UPSIDE DOWN -->
+  <text x="512" y="170" font-family="serif" font-size="48" font-weight="bold" fill="#FF0000" text-anchor="middle" filter="url(#glow)" style="letter-spacing: 2px; text-transform: uppercase;">Message From The</text>
+  <text x="512" y="220" font-family="serif" font-size="60" font-weight="bold" fill="#FF0000" text-anchor="middle" filter="url(#glow)" style="letter-spacing: 4px; text-transform: uppercase;">Upside Down</text>
+  
+  <!-- Envelope -->
+  <path d="M362,270 L662,270 L662,470 L362,470 Z" fill="#8B0000" />
+  <path d="M362,270 L512,370 L662,270" fill="#8B0000" stroke="#FF0000" stroke-width="2" filter="url(#glow)" />
+  <circle cx="512" cy="370" r="30" fill="#FFD700" stroke="#FF0000" stroke-width="2" filter="url(#glow)" />
+  <text x="512" y="378" font-family="serif" font-size="24" fill="#000000" text-anchor="middle">S.T.</text>
+  
+  <!-- Lower text: ENTER THE PORTAL -->
+  <text x="512" y="620" font-family="serif" font-size="48" font-weight="bold" fill="#FF0000" text-anchor="middle" filter="url(#glow)" style="letter-spacing: 2px; text-transform: uppercase;">Enter The Portal</text>
+</svg>
