@@ -250,7 +250,8 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            z-index: 3000;
+            z-index: 10000;
+            /* Changed from 3000 to 10000 to ensure it's above everything */
             display: none;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1065,19 +1066,19 @@
                 p: `
                     <div id="imageSequenceContainer" style="text-align: center;">
                         <div id="step1" class="image-container">
-                            <img src="1.png" class="sequence-image" alt="Image 1">
+                            <img src="f.png" class="sequence-image" alt="Image 1">
                             <button id="btn1" class="sequence-btn">Hi</button>
                         </div>
                         <div id="step2" class="image-container hidden">
-                            <img src="2.png" class="sequence-image" alt="Image 2">
+                            <img src="f2.png" class="sequence-image" alt="Image 2">
                             <button id="btn2" class="sequence-btn">uhhhhh yes i kn her</button>
                         </div>
                         <div id="step3" class="image-container hidden">
-                            <img src="3.png" class="sequence-image" alt="Image 3">
+                            <img src="f3.png" class="sequence-image" alt="Image 3">
                             <button id="btn3" class="sequence-btn">YES THAT'S ME</button>
                         </div>
                         <div id="step4" class="image-container hidden">
-                            <img src="4.png" class="sequence-image" alt="Image 4">
+                            <img src="f4.png" class="sequence-image" alt="Image 4">
                             <button class="go-back-btn">Go Back</button>
                         </div>
                     </div>
@@ -1104,13 +1105,13 @@
             },
             {
                 bg: "#333333",
-                h: "Dreams",
+                h: "Video",
                 p: `
                     <video class="birthday-video" controls autoplay loop muted>
                         <source src="bday.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="video-caption">The stars are just the beginning for you.</div>
+                    <div class="video-caption">Sorry for how bad this look.</div>
                 `,
                 font: "cursive"
             },
@@ -1428,25 +1429,23 @@
 
         // Setup Byers Room function
         // Setup Byers Room function - FIXED VERSION
+        // Setup Byers Room function - UPDATED VERSION
         function setupByersRoom() {
             const startBtn = document.getElementById('start-btn');
             const overlay = document.getElementById('start-overlay');
-
-            console.log('setupByersRoom called'); // Debug log
 
             if (!startBtn || !overlay) {
                 console.log('Byers Room elements not found');
                 return;
             }
 
-            // Make sure the back button is accessible
+            // Ensure back button is visible and on top
             const backBtn = document.getElementById('backBtn');
             if (backBtn) {
-                backBtn.style.zIndex = '2000'; // Higher than overlay
+                backBtn.style.display = 'block';
+                backBtn.style.zIndex = '10000'; // Ensure highest z-index
+                backBtn.style.pointerEvents = 'auto'; // Ensure it's clickable
             }
-
-            // Make overlay lower z-index than back button
-            overlay.style.zIndex = '1000';
 
             // 1.5x Speed Timings
             const ON_TIME = 450;  // Time letter stays ON
@@ -1457,7 +1456,7 @@
                 overlay.style.display = 'none';
                 const msg = "HAPPY BIRTHDAY AYUMI WISH YOU A LONG LIFE FULL OF FUN AND UNFORGETTABLE ADVENTURES";
 
-                console.log('Starting message sequence'); // Debug log
+                console.log('Starting message sequence');
 
                 for (let char of msg) {
                     if (char === " ") {
@@ -1491,9 +1490,7 @@
             }
 
             startBtn.addEventListener('click', sequenceMessage);
-            console.log('Event listener added to start button'); // Debug log
         }
-
         // Load photo booth function
         function loadPhotoBooth() {
             const container = document.getElementById('photoBoothFrameContainer');
@@ -1506,7 +1503,7 @@
             iframe.style.height = '100%';
             iframe.style.border = 'none';
             iframe.style.background = '#dcdcda';
-            iframe.src = 'photo\\photo.html';
+            iframe.src = 'photo.html';
 
             // Listen for messages from iframe
             window.addEventListener('message', handlePhotoBoothMessage);
